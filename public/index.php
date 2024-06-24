@@ -4,10 +4,7 @@
 /******** ⚠️ WORK HERE ONLY ⚠️ ***********/
 
 require __DIR__ . '/../src/Animal.php';
-
-$lion = new Animal();
-$parrot = new Animal();
-$elephant = new Animal();
+require __DIR__ . '/../src/Other/Animal.php';
 
 $lion->name = 'lion';
 $lion->pawNumber = 4;
