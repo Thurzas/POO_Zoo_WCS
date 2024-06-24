@@ -5,28 +5,24 @@
 
 require __DIR__ . '/../src/Animal.php';
 require __DIR__ . '/../src/Other/Animal.php';
-use App\Animal;
-use App\Other\Animal as OtherAnimal;
-use App\Area;
 
-$savana = new Area('savana');
-$jungle = new Area('jungle');
-$areas = [$savana,$jungle];
+$lion->name = 'lion';
+$lion->pawNumber = 4;
+$lion->carnivorous =true;
+$lion->threatenedLevel ='VU';
+$lion->size=123;
 
-$lion = new Animal('lion', 4);
-$lion->setCarnivorous(true);
-$lion->setSize(70);
-$lion->setThreatenedLevel('VU');
+$parrot->name = 'parrot';
+$parrot->pawNumber = 2;
+$parrot->carnivorous =false;
+$parrot->threatenedLevel ='NT';
+$parrot->size=14;
 
-$parrot = new Animal('parrot', 2);
-$parrot->setSize(30);
-
-$elephant = new Animal('elephant', 4);
-$elephant->setThreatenedLevel('LC');
-
-$savana->addAnimal($lion);
-$savana->addAnimal($elephant);
-$jungle->addAnimal($parrot);
+$elephant->name = 'elephant';
+$elephant->pawNumber = 4;
+$elephant->carnivorous =false;
+$elephant->threatenedLevel ='EN';
+$elephant->size=275;
 
 $animals = [$lion, $parrot, $elephant];
 
