@@ -1,6 +1,5 @@
 <?php
     namespace App;  
-
     final class Felid extends Mammal
     {
         public function __construct($name)

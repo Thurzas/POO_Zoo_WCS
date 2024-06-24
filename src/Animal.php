@@ -1,6 +1,6 @@
 <?php
 namespace App;
-class Animal
+    class Animal
 {
     public const CENTIMETERS_IN_METER = 100;
     public const SIZE_UNIT_CHANGE_LIMIT = 100;

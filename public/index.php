@@ -84,7 +84,7 @@ $jungle->addAnimal($python);
 $jungle->addAnimal($alligator);
 $jungle->addAnimal($nightmarishCreep);
 $desert->addAnimal($scorpio);
-$animals = [$lion, $parrot, $elephant, $zebra, $python, $alligator, $scorpio, $nightmarishCreep, $bee];
+$animals = [$lion, $parrot, $elephant, $tiger, $zebra, $python, $alligator, $scorpio, $nightmarishCreep, $bee];
 
 /***************************************/
 /***************************************/
