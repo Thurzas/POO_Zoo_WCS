@@ -8,13 +8,11 @@ class Animal
     private string $name;
     private float $size = 100;
     private bool $carnivorous = false;
-    private int $pawNumber;
     private string $threatenedLevel = 'NE';
-
-    public function __construct(string $name, int $pawNumber)
+    private int $pawNumber;
+    public function __construct(string $name,)
     {
         $this->name = $name;
-        $this->setPawNumber($pawNumber);
     }
 
     public function getName(): string
@@ -34,19 +32,6 @@ class Animal
         }
 
         $this->size = $size;
-    }
-
-    public function getPawNumber(): int
-    {
-        return $this->pawNumber;
-    }
-
-    private function setPawNumber(int $pawNumber): void
-    {
-        if ($pawNumber < 0) {
-            $pawNumber = 0;
-        }
-        $this->pawNumber = $pawNumber;
     }
 
     public function getThreatenedLevel(): string
