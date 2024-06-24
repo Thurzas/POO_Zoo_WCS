@@ -1,5 +1,12 @@
 <!-- ⛔ DO NOT MODIFY THIS FILE ⛔-->
 
+<?php
+
+use App\Area;
+
+$areaType = $_GET['area'] ?? '';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/area.css">
     <title>Welcome to the Wild Zoo</title>
 </head>
 
@@ -17,7 +25,15 @@
         <h1>Welcome to the Wild Zoo</h1>
     </header>
     <main>
+
+        <?php include 'map.php'; ?>
+
+        <h2><?= $areaType ?></h2>
         <div class="animals">
+            <?php if (isset(${$areaType}) && ${$areaType} instanceof Area && method_exists($area, 'getAnimals')) {
+                $animals = ${$areaType}->getAnimals();
+            }
+            ?>
             <?php foreach ($animals ?? [] as $key => $animal) : ?>
                 <article>
                     <?php if (method_exists($animal, 'speak')) : ?>
@@ -26,7 +42,7 @@
                         </div>
                     <?php endif; ?>
                     <div></div>
-                    <img class="animal-img" width="<?= $animal->size ?? $animal->getSize() ?? 100 ?>%" src="assets/images/animals/<?= $animal->name ?? $animal->getName() ?? 'undefined' . $key % 3 ?>.png" alt="">
+                    <img class="animal-img" width="<?= $animal->getSize() ?? 100 ?>%" src="assets/images/animals/<?= $animal->name ?? $animal->getName() ?? 'undefined' . $key % 3 ?>.png" alt="">
                     <div class="notice">
                         <div class="title">
                             <h1>
@@ -62,6 +78,7 @@
             <?php endforeach; ?>
         </div>
     </main>
+
 </body>
 
 </html>
